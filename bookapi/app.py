@@ -3,7 +3,8 @@ from flask_restful import Api
 from models.book import db
 from schemas.book import ma
 from config import Config
-from resources.book import BookListResource, BookResource
+# from resources.book import BookListResource, BookResource
+from resources.book_resources import BookListResource,BookResource
 
 app = Flask(__name__)
 app.config.from_object(Config)

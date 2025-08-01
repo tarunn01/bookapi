@@ -38,6 +38,11 @@ class BookResource(Resource):
         db.session.commit()
         return {"message": "Book updated"}
 
+    def get(self,book_id):
+        book = Book.query.get(book_id)
+        return book_schema.dump(book), 200
+        # {"message":"book with id"}
+
     def delete(self, book_id):
         book = Book.query.get(book_id)
         if not book:
