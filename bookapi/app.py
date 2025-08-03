@@ -4,7 +4,7 @@ from models.book import db
 from schemas.book import ma
 from config import Config
 # from resources.book import BookListResource, BookResource
-from resources.book_resources import BookListResource,BookResource
+from resources.book_resources import BookListResource,BookResource,UploadFile
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -17,6 +17,7 @@ ma.init_app(app)
 api = Api(app)
 
 # Routes
+api.add_resource(UploadFile, '/upload')
 api.add_resource(BookListResource, '/books')
 api.add_resource(BookResource, '/books/<int:book_id>')
 
