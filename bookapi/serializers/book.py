@@ -1,5 +1,5 @@
 from flask_marshmallow import Marshmallow
-from models.book import Book
+from domain.book import Book
 
 ma = Marshmallow()
 

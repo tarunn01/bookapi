@@ -1,8 +1,8 @@
 from flask_restful import Resource
 from flask import request
-from models.book import Book, db
-from schemas.book import BookSchema
-from services.s3_service import upload_file_to_s3
+from domain.book import Book, db
+from serializers.book import BookSchema
+# from services.aws.s3_service import upload_file_to_s3
 import os
 
 book_schema = BookSchema()

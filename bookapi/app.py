@@ -1,10 +1,10 @@
 from flask import Flask
 from flask_restful import Api
-from models.book import db
-from schemas.book import ma
+from domain.book import db
+from serializers.book import ma
 from config import Config
 # from resources.book import BookListResource, BookResource
-from resources.book_resources import BookListResource,BookResource,UploadFile
+from controllers.book_resources import BookListResource,BookResource,UploadFile
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -28,4 +28,4 @@ def home():
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
